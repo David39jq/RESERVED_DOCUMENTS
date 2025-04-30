@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!--========== icons styles ==========-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="styles/index.css">
+
+    <title>Restaurante</title>
+</head>
+
+<body>
+    <main class="l-main">
+        <!--========== HOME ==========-->
+        <!--========== elemento de la seccion 1 ==========-->
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">Déjate cautivar</h1>
+                    <h2 class="home__subtitle"> Prueba la mejor comida <br></h2>
+
+                    <a href="reserve.html" class="button">Reserva ahora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!--imagen de la primera seccion-->
+                <!-- <img src="images/platos/22.jpg" alt="" class="home__img"> -->
+                <img src="/assets/images/platos/22.jpg" alt="" class="home__img">
+            </div>
+        </section>
+
+        <!--========== elemento de la seccion 2 ==========-->
+        <section class="about section bd-container" id="about">
+            <div class="about__container  bd-grid">
+                <div class="about__data">
+                    <span class="section-subtitle about__initial">Conocenos</span>
+                    <h2 class="section-title about__initial">Disfruta de una <br> experiencia inolvidable</h2>
+                    <p class="about__description">Cocinamos la mejor comida de toda la ciudad, con un excelente servicio
+                        al cliente, las mejores comidas y al mejor precio, visítanos</p>
+                    <a href="reserve.html" class="button">Reserva ahora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <img src="/assets/images/platos/123.jpg" alt="" class="about__img">
+            </div>
+        </section>
+        <!--========== elemento de la seccion 3 ==========-->
+        <%- include('./platos-destacados/platosDestacados.html') %>
+            <!--========== Elementos seccion 4 ==========-->
+            <%- include('./contactos/contactos.html') %>
+    </main>
+</body>
+
+</html>

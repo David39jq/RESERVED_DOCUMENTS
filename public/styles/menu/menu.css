@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* =============================
+			GLOBALS
+===============================*/
+:root {
+
+  /*========== Colores ==========*/
+  --prueba-color: red;
+  --title-color: #044040;
+  --first-color: #044040;
+  --first-color-alt: #F2A71B;
+  --title-color-2: #022626;
+  --text-color: #000000;
+  --text-color-light: #808080;
+  --body-color: #F2F2F2;
+  --container-color: #FFFFFF;
+  --text-color-button: #FFFFFF;
+  --menu-cards: #C2B280;
+
+  /*========== Fuente y tipografía ==========*/
+  --body-font: 'Poppins', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--body-font);
+}
+
+.wrapper h1{
+    font-family: var(--body-font);
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 75px; /* Ajusta este valor según necesites */
+    color: var(--title-color);
+}
+
+/*========== Variables Tema oscuro ==========*/
+body.dark-theme{
+  --title-color: #C2B280;
+  --title-color-2: #F2F2F2;
+  --text-color: #F1F3F2;
+  --body-color: #1D2521;
+  --container-color: #27302C;
+  --container-color-text:#F1F3F2;
+  --first-color: #F2A71B;
+  --text-color-button: #FFFFFF;
+}
+
+body{
+  padding: 10px;
+  background-color: var(--body-color);
+}
+.wrapper{
+  margin: 100px auto;
+  max-width: 1100px;
+}
+.wrapper nav{
+  display: flex;
+  justify-content: center;
+}
+.wrapper .items{
+  display: flex;
+  max-width: 750px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.items{
+  align-items:end;
+  justify-content: space-between;
+}
+
+.items span{
+  padding: 7px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--title-color);
+  border-radius: 50px;
+  border: 2px solid var(--first-color);
+  transition: all 0.3s ease;
+  margin-right: 13px;
+}
+
+.items span.active,
+.items span:hover{
+  color: var(--first-color-alt);
+  background: var(--body-color);
+}
+
+
+
+.gallery .image.hide{
+  display: none;
+}
+.gallery .image.show{
+  animation: animate 0.4s ease;
+}
+@keyframes animate {
+  0%{
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+/*============================
+    ARREGLO DE CARTAS MENUD
+============================*/
+
+.menu{
+  text-align: center;
+  padding-top: 8px;
+}
+
+.menu .menu-box{
+  padding: 100px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap; /*lo qeu hace esto es que las tarjetas no se distorcionen cuando la pantalla sea mas pequeña*/
+}
+
+.menu-card{
+  min-width: 270px;
+  width: 270px;
+  padding: 40px 20px;
+  background-color: var(--container-color);
+  padding-top: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: visible;
+  margin-bottom: 100px;
+}
+
+.menu-card:hover img{
+  margin-top: -80px;
+
+}
+.menu-card img{
+  margin-bottom: 40px;
+  width: 230px;
+  height: 230px;
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.menu-card:hover{
+  box-shadow: 0 0 100px var(--menu-cards);
+}
+
+.menu-card .menu__detail{
+  font-size: 13px;
+  display: -webkit-box;        
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+/*=======*/
+.menu__name, .menu__preci{
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  text-align: left;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.menu__name{
+  font-size: var(--normal-font-size);
+}
+
+.menu__name, .menu__preci{
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  text-align: left;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.menu__detail, .menu__preci{
+  font-size: var(--small-font-size);
+}
+
+.menu__detail{
+  margin-bottom: var(--mb-1);
+  text-align: left;
+  margin-bottom: 15px;
+  display: block;
+}
+
+
+
+/*==================================
+    Responsive
+==================================*/
+@media (max-width: 1000px) {
+  .gallery .image{
+    width: calc(100% / 3);
+  }
+}
+@media (max-width: 800px) {
+  .gallery .image{
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 700px) {
+  .wrapper nav .items{
+    max-width: 600px;
+  }
+  nav .items span{
+    padding: 7px 15px;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper{
+    margin: 30px auto;
+  }
+  .wrapper nav .items{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav .items span{
+    margin: 5px;
+  }
+  .gallery .image{
+    width: 100%;
+  }
+}

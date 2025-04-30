@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Lusail Royal</title>
+
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!--icons styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="styles/index.css"> <!-- mirar si toca llamar esta linea de codigo -->
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="/" class="nav__logo">
+                <h1 id="Logo_res">LUSAIL ROYAL</h1>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+
+                    <li class="nav__item"><a href="/" class="nav__link active-link">Inicio</a></li>
+                    <li class="nav__item"><a href="/#about" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="/#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="reserve.html" class="nav__link">Reservacion</a></li>
+                    <li class="nav__item"><a href="/#contact" class="nav__link">Contactos</a></li>
+                    <li class="nav__item"><a href="login.html" class="nav__link"><i class="fa-solid fa-user"></i></a>
+                    </li>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--========== MAIN ==========-->
+    <main class="l-main">
+        <section class="full-menu" id="menu">
+            <div class="wrapper">
+                <h1>Nuestro Menu</h1>
+                <!-- filtrar elementos -->
+                <nav>
+                    <div class="items">
+                        <span class="item active" data-name="all">Todos</span>
+                        <span class="item" data-name="platos">Platos</span>
+                        <span class="item" data-name="bebida">Bebidas</span>
+                        <span class="item" data-name="cocteleria">cocteleria</span>
+                        <span class="item" data-name="postres">postres</span>
+                    </div>
+                </nav>
+                <!-- filter Images -->
+                <div class="gallery">
+                    <div class="menu">
+                        <div class="menu-box">
+                            <div class="image" data-name="platos">
+                                <div class="menu-card" data-name="platos"><!--tajeta del menu-->
+                                    <img src="images/platos/tartar-atun.jpg" alt="">
+                                    <h3 class="menu__name">Tartar De Atún</h3>
+                                    <span class="menu__detail">Plato delicioso</span>
+                                    <span class="menu__preci">$35.000</span>
+                                </div>
+                            </div>
+                            <div class="image" data-name="platos">
+                                <div class="menu-card" data-name="platos"><!--tajeta del menu-->
+                                    <img src="images/platos/COSTILLAS SAINT LOUIS.jpg" alt="">
+                                    <h3 class="menu__name">Lomo Fino - Tierra Andina</h3>
+                                    <span class="menu__detail">Plato delicioso</span>
+                                    <span class="menu__preci">$22.00</span>
+
+                                </div>
+                            </div>
+                            <div class="image" data-name="cocteleria">
+                                <div class="menu-card" data-name="platos"><!--tajeta del menu-->
+                                    <img src="images/cocteles/dulce-misak.jpg" alt="">
+                                    <h3 class="menu__name">Dulce misak</h3>
+                                    <span class="menu__detail">Mezcla de ginebra, licor 43, limonchelo artesanal,
+                                        tropical
+                                        piña con frutos rojos finalizado con nube de vino.</span>
+                                    <span class="menu__preci">$55.000</span>
+                                </div>
+                            </div>
+                            <div class="image" data-name="postres">
+                                <div class="menu-card" data-name="platos"><!--tajeta del menu-->
+                                    <img src="images/postres/torata-chocolate.jpg" alt="">
+                                    <h3 class="menu__name">Torta De Chocolate</h3>
+                                    <span class="menu__detail">descripcion</span>
+                                    <span class="menu__preci">$15.000</span>
+                                </div>
+                            </div>
+                            <div class="image" data-name="bebida">
+                                <div class="menu-card" data-name="platos"><!--tajeta del menu-->
+                                    <img src="images/bebidas/Limonada-cerezada.jpeg" alt="">
+                                    <h3 class="menu__name">Limonada cerezada</h3>
+                                    <span class="menu__detail"></span>
+                                    <span class="menu__preci">$11.900</span>
+                                </div>
+                            </div>
+                            <div class="image" data-name="bebida">
+                                <div class="menu-card" data-name="platos"><!--tajeta del menu-->
+                                    <img src="images/bebidas/limonada-de-coco.jpg" alt="">
+                                    <h3 class="menu__name">Dulce misak</h3>
+                                    <span class="menu__detail"></span>
+                                    <span class="menu__preci">$15.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cuadro de vista previa de imagen en pantalla completa -->
+    </main>
+
+    <!--========== llamar footer ==========-->
+
+    <script src="js/menu.js"></script>
+    <!-- Script -->
+    <script src="../../js/index.js"></script>
+</body>
+
+</html>

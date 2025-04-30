@@ -1,0 +1,61 @@
+/*========== FOOTER ==========*/
+.footer__container{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    row-gap: 2rem;
+  }
+  
+  #logo_res{
+    color: var(--title-color);
+  }
+  
+  .footer__description{
+    display: block;
+    font-size: var(--small-font-size);
+    margin: .25rem 0 var(--mb-3);
+  }
+  
+  .footer__social{
+    font-size: 1.5rem;
+    color: var(--title-color);
+    margin-right: var(--mb-2);
+  }
+  
+  .footer__title{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-2);
+  }
+  
+  .footer__link{
+    display: inline-block;
+    color: var(--text-color);
+    margin-bottom: var(--mb-1);
+  }
+  
+  .footer__link:hover{
+    color: var(--first-color-alt);
+  }
+  
+  .footer__copy{
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    margin-top: 3.5rem;
+  }
+
+  .footer-line {
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 1px 1px var(--text-color-light);
+}
+
+.footer {
+  margin-top: 0;
+  padding-top: 100px; /* o menos si deseas menos separación */
+  
+}
+
+.footer__copy {
+  margin-top: 1rem; /* cambia de 3.5rem a algo menor */
+}

@@ -1,0 +1,143 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colores ==========*/
+  --title-color: #044040;
+  --first-color: #044040;
+  --first-color-rgba: rgba(4, 64, 64, 0.5);
+  --first-color-alt: #F2A71B;
+  --title-color-2: #022626;
+  --text-color: #000000;
+  --text-color-light: #808080;
+  --body-color: #F2F2F2;
+  --container-color: #FFFFFF;
+  --text-color-button: #FFFFFF;
+  --menu-cards: #C2B280;
+  --input-login: #e7e5e5;
+  
+  /*========== Fuente y tipografía ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;  
+
+  /*========== Peso de la fuente ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*=========== Tipografía responsiva ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --big-font-size: 3rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --tiny-font-size: .75rem;
+  }
+}
+
+/*========== Variables Tema oscuro ==========*/
+body.dark-theme{
+  --title-color: #C2B280;
+  --title-color-2: #F2F2F2;
+  --text-color: #F1F3F2;
+  --body-color: #1D2521;
+  --container-color: #27302C;
+  --container-color-text:#F1F3F2;
+  --first-color: #F2A71B;
+  --text-color-button: #FFFFFF;
+  --first-color-rgba: rgba(242, 167, 27, 0.5);
+  --input-login: transparent;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} 
+
+/*=============================*/
+  .contenedor {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #003333;
+  }
+  
+  .selector-fecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .selector-fecha label {
+    font-weight: 500;
+  }
+  
+  .selector-fecha input[type="date"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .tabla-reservas table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .tabla-reservas th {
+    background-color: #003333;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .tabla-reservas td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .tabla-reservas tr:hover {
+    background-color: #f0f8f8;
+  }
+
+  /*Titulo listado*/
+  .section-title{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #003333;
+    padding: 2%;
+  }
+
+  .calendario{
+    justify-content: end;
+  }
+  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!--========== icons styles ==========-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="styles/index.css">
+
+    <title>Restaurante</title>
+</head>
+
+<body>
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== llamar al HEADER ==========-->
+    <%- include('../views/partials/header') %>
+
+        <!--========== llamar main ==========-->
+        <%- include('../views/inicio/inicio') %>
+
+            <!--========== LLamar footer ==========-->
+            <%- include('../views/partials/footer') %>
+
+                <!--========== SCROLL REVEAL ==========-->
+                <script src="https://unpkg.com/scrollreveal"></script>
+                <!--========== MAIN JS ==========-->
+                <!-- <script src="../../js/index.js"></script> -->
+</body>
+
+</html>

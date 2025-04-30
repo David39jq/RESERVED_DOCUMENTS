@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* =============================
+			GLOBALS
+===============================*/
+:root {
+
+  /*========== Colores ==========*/
+  --prueba-color: red;
+  --title-color: #044040;
+  --first-color: #044040;
+  --first-color-alt: #F2A71B;
+  --title-color-2: #022626;
+  --text-color: #000000;
+  --text-color-light: #808080;
+  --body-color: #F2F2F2;
+  --container-color: #FFFFFF;
+  --text-color-button: #FFFFFF;
+  --menu-cards: #C2B280;
+
+  /*========== Fuente y tipografía ==========*/
+  --body-font: 'Poppins', sans-serif;
+}
+
+/*========== Variables Tema oscuro ==========*/
+body.dark-theme{
+    --title-color: #C2B280;
+    --title-color-2: #F2F2F2;
+    --text-color: #F1F3F2;
+    --body-color: #1D2521;
+    --container-color: #27302C;
+    --container-color-text:#F1F3F2;
+    --first-color: #F2A71B;
+    --text-color-button: #FFFFFF;
+  }
+
+.reserve-container{
+    display: flex;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reservation{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.reservation form{
+    padding: 50px;
+    width: 60%;
+    backdrop-filter: blur(5px);/*hace qeu se desonfoqeu el fondo del formulario*/
+    background-color: var(--container-color); /*Darle opacidad al fondo del desenfoque*/
+}
+
+.reservation form h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: var(--title-color);
+    text-align: center;
+}
+
+.btn{
+    color: var(--text-color-button);
+    background-color: var(--first-color);
+}
+
+.btn:hover{
+    background-color: var(--menu-cards);
+}
+
+.input, .especificaciones{
+    background-color: #f5f5f5;
+}
+
+.input, .especificaciones{
+    font-family: var(--body-font);
+}
+
+
+
+
+.reservation form div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation form input, .reservation form textarea{
+    width: 50%;
+    padding: 15px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.reservation form textarea{
+    resize: none;
+    width: 100%;
+}
+
+.reservation form  .btn{
+    display: block;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.reservation form .btn:hover{
+    transform: translateX(0);
+}
