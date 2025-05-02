@@ -1,0 +1,29 @@
+<!--========== CSS ==========-->
+<!-- <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/platosDestacados/platosDestacados.css"> -->
+
+
+<section class="menu section bd-container" id="menu">
+    <span class="section-subtitle">Menu</span>
+    <h2 class="section-title">Platos más destacados</h2>
+    <div class="menu">
+        <div class="menu__container bd-grid">
+            <% platos.forEach(plato=> { %>
+                <div class="menu__content">
+                    <img src="assets/images/platos/<%= plato.imganen_menu %>" alt="" class="menu__img">
+                    <h3 class="menu__name">
+                        <%= plato.nombre_plato %>
+                    </h3>
+                    <span class="menu__detail">
+                        <%= plato.descripcion %>
+                    </span>
+                    <span class="menu__preci">$<%= plato.precio.toFixed(2) %></span>
+                </div>
+                <% }); %>
+
+                    <a href="/menu/menu.html" class="button">
+                        Ver todo el menu <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+        </div>
+    </div>
+</section>

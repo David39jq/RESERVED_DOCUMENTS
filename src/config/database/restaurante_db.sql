@@ -3,15 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2025 a las 19:47:58
+-- Tiempo de generación: 02-05-2025 a las 21:42:57
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 CREATE DATABASE IF NOT EXISTS restaurante_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE restaurante_db;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO"; 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,17 +34,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `categorias_menu` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `imagen_menu`
---
-
-CREATE TABLE `imagen_menu` (
-  `nombre_imagen` varchar(50) NOT NULL,
-  `id_imagen_menu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -88,6 +77,7 @@ CREATE TABLE `menu` (
   `nombre_plato` varchar(100) NOT NULL,
   `descripcion` text DEFAULT NULL,
   `precio` decimal(10,2) NOT NULL,
+  `imganen_menu` varchar(50) NOT NULL,
   `id_categoria_menu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -198,12 +188,6 @@ CREATE TABLE `usuarios` (
 --
 ALTER TABLE `categorias_menu`
   ADD PRIMARY KEY (`id_categoria`);
-
---
--- Indices de la tabla `imagen_menu`
---
-ALTER TABLE `imagen_menu`
-  ADD KEY `id_imagen_menu` (`id_imagen_menu`);
 
 --
 -- Indices de la tabla `informacion_restaurante`
@@ -326,12 +310,6 @@ ALTER TABLE `roles`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `imagen_menu`
---
-ALTER TABLE `imagen_menu`
-  ADD CONSTRAINT `imagen_menu_ibfk_1` FOREIGN KEY (`id_imagen_menu`) REFERENCES `menu` (`id_menu`);
 
 --
 -- Filtros para la tabla `informacion_restaurante`
