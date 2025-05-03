@@ -8,48 +8,21 @@
     <h2 class="section-title">Platos más destacados</h2>
     <div class="menu">
         <div class="menu__container bd-grid">
-            <% platos.forEach(plato=> { %>
+            <% destacados.forEach(plato=> { %>
                 <div class="menu__content">
-                    <img src="assets/images/platos/<%= plato.imganen_menu %>" alt="" class="menu__img">
+                    <img src="<%= plato.imagen_menu %>" alt="" class="menu__img">
                     <h3 class="menu__name">
                         <%= plato.nombre_plato %>
                     </h3>
                     <span class="menu__detail">
                         <%= plato.descripcion %>
                     </span>
-                    <span class="menu__preci">$<%= plato.precio.toFixed(2) %></span>
+                    <span class="menu__preci">$<%= parseFloat(plato.precio).toFixed(2) %></span>
                 </div>
                 <% }); %>
-
-                <% platos.forEach(plato=> { %>
-                    <div class="menu__content">
-                        <img src="assets/images/platos/<%= plato.imganen_menu %>" alt="" class="menu__img">
-                        <h3 class="menu__name">
-                            <%= plato.nombre_plato %>
-                        </h3>
-                        <span class="menu__detail">
-                            <%= plato.descripcion %>
-                        </span>
-                        <span class="menu__preci">$<%= plato.precio.toFixed(2) %></span>
-                    </div>
-                    <% }); %>
-
-                    <% platos.forEach(plato=> { %>
-                        <div class="menu__content">
-                            <img src="assets/images/platos/<%= plato.imganen_menu %>" alt="" class="menu__img">
-                            <h3 class="menu__name">
-                                <%= plato.nombre_plato %>
-                            </h3>
-                            <span class="menu__detail">
-                                <%= plato.descripcion %>
-                            </span>
-                            <span class="menu__preci">$<%= plato.precio.toFixed(2) %></span>
-                        </div>
-                        <% }); %>
-
-                    <a href="/menu" class="button">
-                        Ver todo el menú <i class="fa-solid fa-arrow-right"></i>
-                    </a>
         </div>
+        <a href="/menu" class="button">
+            Ver todo el menú <i class="fa-solid fa-arrow-right"></i>
+        </a>
     </div>
 </section>

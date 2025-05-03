@@ -1,18 +1,11 @@
-let conectar = require("mysql");
+const mysql = require('mysql2/promise');
 
-let conexion = conectar.createConnection({
+// Crear un pool de conexiones
+const conexion = mysql.createPool({
     host: "localhost",
     database: "restaurante_db",
     user: "root",
-    password: ""// quitar la contraseña si su mysql no usa una contraseña y si usa colacar su contraseña
-});
-
-conexion.connect(function(error){
-    if(error){
-        throw error;
-    }else{
-        console.log("conexion exitosa");
-    }
+    password: "" // Si tu MySQL no usa una contraseña, deja el campo vacío. Si usa, colócala aquí.
 });
 
 module.exports = conexion;
