@@ -15,8 +15,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--========== CSS ==========-->
-    <link rel="stylesheet" href="styles/index.css"> <!-- mirar si toca llamar esta linea de codigo -->
-    <link rel="stylesheet" href="menu.css">
+    <!-- <link rel="stylesheet" href="styles/index.css"> mirar si toca llamar esta linea de codigo -->
+    <link rel="stylesheet" href="styles/menu/menu.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
@@ -24,33 +25,9 @@
         <i class='bx bx-chevron-up scrolltop__icon'></i>
     </a>
 
-    <!--========== HEADER ==========-->
-    <header class="l-header" id="header">
-        <nav class="nav bd-container">
-            <a href="/" class="nav__logo">
-                <h1 id="Logo_res">LUSAIL ROYAL</h1>
-            </a>
+    <!--========== llamar al HEADER ==========-->
+    <%- include('../partials/header') %>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-
-                    <li class="nav__item"><a href="/" class="nav__link active-link">Inicio</a></li>
-                    <li class="nav__item"><a href="/#about" class="nav__link">Nosotros</a></li>
-                    <li class="nav__item"><a href="/#menu" class="nav__link">Menu</a></li>
-                    <li class="nav__item"><a href="reserve.html" class="nav__link">Reservacion</a></li>
-                    <li class="nav__item"><a href="/#contact" class="nav__link">Contactos</a></li>
-                    <li class="nav__item"><a href="login.html" class="nav__link"><i class="fa-solid fa-user"></i></a>
-                    </li>
-                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
-
-                </ul>
-            </div>
-
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
-            </div>
-        </nav>
-    </header>
 
     <!--========== MAIN ==========-->
     <main class="l-main">
