@@ -43,11 +43,19 @@ app.use(require("./routes/index"));
 const platosRoutes = require('./routes/index');
 app.use('/platosdestacado', platosRoutes);
 
-app.get('/menu', (req, res) => {
-    res.render('menu/menu'); // NO pongas la extensión .ejs
-  });
-  
 
+
+app.get('/reserve', (req, res) => {
+  res.render("reservas/reserve"); // NO pongas la extensión .ejs
+});
+
+app.get('/login', (req, res) => {
+  res.render('login/login');  // Esto es clave
+});
+
+app.get('/sign-up', (req, res) => {
+  res.render('registrarse/sign-up');  // Esto es clave
+});
 
 
 // ===========================

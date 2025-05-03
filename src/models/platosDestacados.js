@@ -6,6 +6,7 @@ const Menu = {
     const [rows] = await conexion.execute(
       'SELECT * FROM menu WHERE destacado_semana = 1 LIMIT 3'
     );
+    
     return rows;
   }
 };

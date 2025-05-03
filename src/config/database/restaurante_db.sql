@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2025 a las 18:15:40
+-- Tiempo de generación: 03-05-2025 a las 20:42:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -89,7 +89,7 @@ CREATE TABLE `menu` (
   `precio` decimal(10,2) NOT NULL,
   `imagen_menu` varchar(50) NOT NULL,
   `id_categoria_menu` int(11) NOT NULL,
-  `destacado_semana` tinyint(1) DEFAULT 0
+  `destacado_semana` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -99,7 +99,8 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `nombre_plato`, `descripcion`, `precio`, `imagen_menu`, `id_categoria_menu`, `destacado_semana`) VALUES
 (3, 'Lomo Saltado', 'Tradicional plato peruano con carne y papas fritas.', 25.00, 'assets/images/platos/lomo-fino.jpg', 1, 0),
 (4, 'Tarta De Atún', 'Masa horneada rellena de una mezcla de atún, cebolla, huevo duro, aceitunas y condimentos, ideal como entrada o plato principal.', 35.00, 'assets/images/platos/tarta-atun.jpg', 1, 0),
-(5, 'Dulce Misak', 'Postre tradicional de frutas locales endulzado con panela, con un toque de especias autóctonas.', 45.00, 'assets/images/cocteles/dulce-misak.jpg', 2, 0);
+(5, 'Dulce Misak', 'Postre tradicional de frutas locales endulzado con panela, con un toque de especias autóctonas.', 45.00, 'assets/images/cocteles/dulce-misak.jpg', 2, 0),
+(6, 'Torta De Chocolate', 'Deliciosa y esponjosa torta elaborada con cacao puro, ideal para los amantes del chocolate, perfecta para cualquier ocasión', 15.00, 'assets/images/postres/torta-chocolate.jpg', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -295,7 +296,7 @@ ALTER TABLE `categorias_menu`
 -- AUTO_INCREMENT de la tabla `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `mesas`
