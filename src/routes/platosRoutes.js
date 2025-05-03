@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const platosController = require('../controllers/platosDestacados');
+const platosController = require('../controllers/indexController');
 
-router.get('/platos-destacados', platosController.obtenerPlatosDestacados);
+router.get('/destacados', menuController.mostrarPlatosDestacados);
 
 module.exports = router;
+

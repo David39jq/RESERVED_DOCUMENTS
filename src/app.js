@@ -40,7 +40,7 @@ app.use(session({
 // ===========================
 app.use(require("./routes/index"));
 
-const platosRoutes = require('./routes/platosRoutes');
+const platosRoutes = require('./routes/index');
 app.use('/platosdestacado', platosRoutes);
 
 app.get('/menu', (req, res) => {

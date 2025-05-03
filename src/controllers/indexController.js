@@ -1,3 +1,23 @@
+// const link = require("../config/link");
+// const conexion = require("../config/conexion");
+
+// exports.obtenerPlatosDestacados = (req, res) => {
+//   const queryPlatosDestacados = `
+//     SELECT nombre_plato, descripcion, precio, imagen_menu
+//     FROM menu
+//     -- WHERE destacado = 1
+//   `;
+
+//   conexion.query(queryPlatosDestacados, (error, platos) => {
+//     if (error) {
+//       console.error(error);
+//       return res.status(500).send("Error al obtener los platos destacados");
+//     }
+    
+//     res.render("platosDestacados", { link: link, platos: platos });
+//   });
+// };
+
 const Menu = require('../models/platosDestacados');
 
 const renderIndex = async (req, res) => {
@@ -14,3 +34,6 @@ const renderIndex = async (req, res) => {
 module.exports = {
   renderIndex
 };
+
+
+

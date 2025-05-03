@@ -3,13 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2025 a las 21:42:57
+-- Tiempo de generación: 03-05-2025 a las 18:15:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
-
-CREATE DATABASE IF NOT EXISTS restaurante_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-
-USE restaurante_db;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +31,20 @@ CREATE TABLE `categorias_menu` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categorias_menu`
+--
+
+INSERT INTO `categorias_menu` (`id_categoria`, `nombre_categoria`) VALUES
+(1, 'Platos'),
+(2, 'cocteleria'),
+(3, 'Postres'),
+(4, 'Bebidas'),
+(5, 'Ensaladas'),
+(6, 'Sopas'),
+(7, 'Comida Internacional'),
+(8, 'Desayunos');
 
 -- --------------------------------------------------------
 
@@ -77,9 +87,19 @@ CREATE TABLE `menu` (
   `nombre_plato` varchar(100) NOT NULL,
   `descripcion` text DEFAULT NULL,
   `precio` decimal(10,2) NOT NULL,
-  `imganen_menu` varchar(50) NOT NULL,
-  `id_categoria_menu` int(11) NOT NULL
+  `imagen_menu` varchar(50) NOT NULL,
+  `id_categoria_menu` int(11) NOT NULL,
+  `destacado_semana` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu`
+--
+
+INSERT INTO `menu` (`id_menu`, `nombre_plato`, `descripcion`, `precio`, `imagen_menu`, `id_categoria_menu`, `destacado_semana`) VALUES
+(3, 'Lomo Saltado', 'Tradicional plato peruano con carne y papas fritas.', 25.00, 'assets/images/platos/lomo-fino.jpg', 1, 0),
+(4, 'Tarta De Atún', 'Masa horneada rellena de una mezcla de atún, cebolla, huevo duro, aceitunas y condimentos, ideal como entrada o plato principal.', 35.00, 'assets/images/platos/tarta-atun.jpg', 1, 0),
+(5, 'Dulce Misak', 'Postre tradicional de frutas locales endulzado con panela, con un toque de especias autóctonas.', 45.00, 'assets/images/cocteles/dulce-misak.jpg', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -269,13 +289,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias_menu`
 --
 ALTER TABLE `categorias_menu`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `mesas`
