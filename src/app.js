@@ -43,6 +43,8 @@ app.use(require("./routes/index"));
 const platosRoutes = require('./routes/index');
 app.use('/platosdestacado', platosRoutes);
 
+const userRoutes = require('./routes/userRoutes');
+app.use(userRoutes); // Esto registra /regUsuario correctamente
 
 
 app.get('/reserve', (req, res) => {

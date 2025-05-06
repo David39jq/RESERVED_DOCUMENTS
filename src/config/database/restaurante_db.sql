@@ -6,6 +6,9 @@
 -- Tiempo de generación: 03-05-2025 a las 20:42:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
+CREATE DATABASE IF NOT EXISTS restaurante_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+USE restaurante_db;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
