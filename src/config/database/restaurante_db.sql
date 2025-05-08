@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2025 a las 20:42:19
+-- Tiempo de generación: 07-05-2025 a las 18:40:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 CREATE DATABASE IF NOT EXISTS restaurante_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
@@ -129,7 +129,7 @@ CREATE TABLE `notificaciones` (
   `tipo_notificacion` enum('confirmacion','recordatorio','cancelacion') NOT NULL,
   `fecha_notificacion` timestamp NOT NULL DEFAULT current_timestamp(),
   `leido_notificacion` tinyint(1) DEFAULT 0,
-  `id_usuario_notificacion` varchar(12) NOT NULL
+  `id_usuario_notificacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -143,7 +143,7 @@ CREATE TABLE `opiniones` (
   `comentario_opinion` text NOT NULL,
   `calificacion_opinion` tinyint(4) NOT NULL,
   `fecha_opinion` timestamp NOT NULL DEFAULT current_timestamp(),
-  `id_usuario_opinion` varchar(12) NOT NULL,
+  `id_usuario_opinion` int(11) NOT NULL,
   `id_restaurante_opinion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -159,7 +159,7 @@ CREATE TABLE `reservas` (
   `hora_reserva` time NOT NULL,
   `num_comensales_reserva` int(11) NOT NULL,
   `estado` enum('pendiente','confirmada','cancelada') DEFAULT 'pendiente',
-  `id_usuario_reserva` varchar(12) NOT NULL,
+  `id_usuario_reserva` int(11) NOT NULL,
   `id_mesa_reserva` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -188,6 +188,14 @@ CREATE TABLE `roles` (
   `nombre_rol` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id_rol`, `nombre_rol`) VALUES
+(1, 'administrador'),
+(2, 'usuario');
+
 -- --------------------------------------------------------
 
 --
@@ -195,13 +203,21 @@ CREATE TABLE `roles` (
 --
 
 CREATE TABLE `usuarios` (
-  `id_usuario` varchar(12) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `nombre_usuario` varchar(50) NOT NULL,
   `email_usuario` varchar(80) NOT NULL,
   `telefono_usuario` varchar(15) NOT NULL,
   `password_usuario` varchar(100) NOT NULL,
   `id_rol_usuario` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email_usuario`, `telefono_usuario`, `password_usuario`, `id_rol_usuario`) VALUES
+(9, 'brayan', 'bratan@solis', '3005454', '$2b$10$wT7/tyyT6j8rUJ9hfhcSBu4ECyrMLGtQStcKuFP.huyN15DNkZllq', 1),
+(10, 'david', 'david@solis', '3005454', '$2b$10$5GvFcvdH/noVozIBS1i4V.yLKPSmp33kBm1EjEOoXre79/7ohcMEa', 1);
 
 --
 -- Índices para tablas volcadas
@@ -329,7 +345,13 @@ ALTER TABLE `reservas`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rol` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
@@ -391,3 +413,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
