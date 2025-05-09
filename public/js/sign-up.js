@@ -1,4 +1,3 @@
-passwordRegister('campoPass', 'logincampoPass');
 // // Función para alternar visibilidad de contraseña
 // const togglePasswordVisibility = (inputId, iconId) => {
 //     const input = document.getElementById(inputId);
