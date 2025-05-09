@@ -1,0 +1,102 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--body-color);
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: var(--container-color);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #003333;
+  margin: 0;
+}
+
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.btn-nueva-reserva {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none;
+}
+
+.btn-nueva-reserva:hover {
+  background-color: #0056b3;
+}
+
+.selector-fecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.selector-fecha label {
+  font-weight: 500;
+}
+
+.selector-fecha input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.tabla-reservas table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabla-reservas th {
+  background-color: #003333;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.tabla-reservas td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-reservas tr:hover {
+  background-color: #f0f8f8;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.btn-eliminar:hover {
+  background-color: #b52a37;
+}

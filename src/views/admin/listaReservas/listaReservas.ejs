@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista Reservas | Lusail Royal</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="/styles/admin/listaReservas/listaReservas.css">
+</head>
+
+<body>
+  <!--========== Llamar al HEADER ==========-->
+  <%- include('../../../views/partials/header') %>
+
+    <main class="contenedor">
+      <div class="barra-superior">
+        <h2 class="titulo">Lista Reservas</h2>
+        <a href="/reserve" class="btn-nueva-reserva">Nueva Reserva</a>
+      </div>
+
+      <!-- Formulario de filtro de fecha -->
+      <div class="selector-fecha">
+        <!-- listaReservas.ejs -->
+        <!-- listaReservas.ejs -->
+        <form action="/listaReservaciones" method="GET">
+          <label for="fecha">Selecciona una fecha:</label>
+          <input type="date" id="fecha" name="fecha" value="<%= fechaSeleccionada || '' %>" />
+          <button type="submit">Busacar</button>
+        </form>
+
+
+      </div>
+
+      <!-- Tabla de reservas -->
+      <div class="tabla-reservas">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Mesa</th>
+              <th>Personas</th>
+              <th>Hora</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Iterar sobre las reservas y mostrarlas -->
+            <% reservas.forEach(reserva=> { %>
+              <tr>
+                <td>
+                  <%= reserva.nombre %>
+                </td>
+                <td>
+                  <%= reserva.correo %>
+                </td>
+                <td>
+                  <%= reserva.mesa %>
+                </td>
+                <td>
+                  <%= reserva.num_comensales_reserva %>
+                </td>
+                <td>
+                  <%= reserva.hora_reserva %>
+                </td>
+                <td><a href="/reservas/delete/<%= reserva.id_reserva %>" class="btn-eliminar">Eliminar</a></td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

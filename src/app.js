@@ -46,6 +46,8 @@ app.use('/platosdestacado', platosRoutes);
 const userRoutes = require('./routes/userRoutes');
 app.use(userRoutes); // Esto registra /regUsuario correctamente
 
+const reservaRoutes = require('./routes/listaReservacionRoutes');
+app.use(reservaRoutes);  // Esto maneja las rutas para las reservas
 
 app.get('/reserve', (req, res) => {
   res.render("reservas/reserve"); // NO pongas la extensión .ejs
@@ -58,6 +60,7 @@ app.get('/login', (req, res) => {
 app.get('/sign-up', (req, res) => {
   res.render('registrarse/sign-up');  // Esto es clave
 });
+
 
 
 // ===========================
