@@ -1,23 +1,3 @@
-// // Función para alternar visibilidad de contraseña
-// const togglePasswordVisibility = (inputId, iconId) => {
-//     const input = document.getElementById(inputId);
-//     const icon = document.getElementById(iconId);
-  
-//     if (input && icon) {
-//       icon.addEventListener('click', () => {
-//         const isHidden = input.type === 'password';
-//         input.type = isHidden ? 'text' : 'password';
-  
-//         icon.classList.toggle('ri-eye-off-fill', !isHidden);
-//         icon.classList.toggle('ri-eye-fill', isHidden);
-//       });
-//     }
-//   };
-  
-//   // Aplicar la función a ambos campos
-//   togglePasswordVisibility('campoPass', 'logincampoPass');
-//   togglePasswordVisibility('campoConfirmPass', 'logincampoConfirmPass');
-
 /*=============== MOSTRAR OCULTAR CONTRASEÑA CREAR CUENTA ===============*/
 const passwordRegister = (loginPass, loginEye) =>{
     const input = document.getElementById(loginPass),
@@ -35,3 +15,23 @@ const passwordRegister = (loginPass, loginEye) =>{
  }
  passwordRegister('campoPass', 'logincampoPass');
  passwordRegister('campoConfirmPass', 'logincampoConfirmPass');
+
+ /*=============== VALIDACIÓN DE FORMULARIO ===============*/
+document.querySelector('.login__form').addEventListener('submit', function (e) {
+   const password = document.querySelector('input[name="password_usuario"]').value.trim();
+   const confirmPassword = document.querySelector('input[name="confirm_password_usuario"]').value.trim();
+
+   // Validar longitud de contraseña
+   if (password.length < 8 || password.length > 12) {
+       alert("La contraseña debe tener entre 8 y 12 caracteres.");
+       e.preventDefault();
+       return;
+   }
+
+   // Validar coincidencia
+   if (password !== confirmPassword) {
+       alert("Las contraseñas no coinciden.");
+       e.preventDefault();
+       return;
+   }
+});
