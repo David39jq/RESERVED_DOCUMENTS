@@ -17,8 +17,8 @@ app.set('view engine', 'ejs');
 // ===========================
 // MIDDLEWARES
 // ===========================
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // ===========================
 // ARCHIVOS ESTÁTICOS
@@ -30,9 +30,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // MANEJO DE SESIONES
 // ===========================
 app.use(session({
-    secret: '123456',
-    resave: false,
-    saveUninitialized: false
+  secret: '123456',
+  resave: false,
+  saveUninitialized: false
 }));
 
 // ===========================
