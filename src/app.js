@@ -49,6 +49,10 @@ app.use(userRoutes); // Esto registra /regUsuario correctamente
 const reservaRoutes = require('./routes/listaReservacionRoutes');
 app.use(reservaRoutes);  // Esto maneja las rutas para las reservas
 
+const menuRoutes = require('./routes/menuRoutes');
+app.use(menuRoutes); // Esto habilita /menu
+
+
 app.get('/reserve', (req, res) => {
   res.render("reservas/reserve"); // NO pongas la extensión .ejs
 });
