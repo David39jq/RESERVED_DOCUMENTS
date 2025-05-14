@@ -3,9 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2025 a las 18:40:06
+-- Tiempo de generación: 14-05-2025 a las 21:55:25
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
+
 CREATE DATABASE IF NOT EXISTS restaurante_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE restaurante_db;
@@ -102,8 +103,8 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `nombre_plato`, `descripcion`, `precio`, `imagen_menu`, `id_categoria_menu`, `destacado_semana`) VALUES
 (3, 'Lomo Saltado', 'Tradicional plato peruano con carne y papas fritas.', 25.00, 'assets/images/platos/lomo-fino.jpg', 1, 0),
 (4, 'Tarta De Atún', 'Masa horneada rellena de una mezcla de atún, cebolla, huevo duro, aceitunas y condimentos, ideal como entrada o plato principal.', 35.00, 'assets/images/platos/tarta-atun.jpg', 1, 0),
-(5, 'Dulce Misak', 'Postre tradicional de frutas locales endulzado con panela, con un toque de especias autóctonas.', 45.00, 'assets/images/cocteles/dulce-misak.jpg', 2, 0),
-(6, 'Torta De Chocolate', 'Deliciosa y esponjosa torta elaborada con cacao puro, ideal para los amantes del chocolate, perfecta para cualquier ocasión', 15.00, 'assets/images/postres/torta-chocolate.jpg', 3, 0);
+(5, 'Dulce Misak', 'Postre tradicional de frutas locales endulzado con panela, con un toque de especias autóctonas.', 45.00, 'assets/images/cocteles/dulce-misak.jpg', 2, 1),
+(6, 'Torta De Chocolate', 'Deliciosa y esponjosa torta elaborada con cacao puro, ideal para los amantes del chocolate, perfecta para cualquier ocasión', 15.00, 'assets/images/postres/torta-chocolate.jpg', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -116,6 +117,13 @@ CREATE TABLE `mesas` (
   `capacidad_mesa` int(11) NOT NULL,
   `disponible_mesa` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `mesas`
+--
+
+INSERT INTO `mesas` (`id_mesa`, `capacidad_mesa`, `disponible_mesa`) VALUES
+(1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -163,6 +171,13 @@ CREATE TABLE `reservas` (
   `id_mesa_reserva` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`id_reserva`, `fecha_reserva`, `hora_reserva`, `num_comensales_reserva`, `estado`, `id_usuario_reserva`, `id_mesa_reserva`) VALUES
+(2, '2025-05-09', '19:00:00', 3, 'confirmada', 33, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -205,7 +220,7 @@ INSERT INTO `roles` (`id_rol`, `nombre_rol`) VALUES
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `nombre_usuario` varchar(50) NOT NULL,
-  `email_usuario` varchar(80) NOT NULL,
+  `email_usuario` varchar(80) NOT NULL UNIQUE,
   `telefono_usuario` varchar(15) NOT NULL,
   `password_usuario` varchar(100) NOT NULL,
   `id_rol_usuario` tinyint(4) NOT NULL
@@ -216,8 +231,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email_usuario`, `telefono_usuario`, `password_usuario`, `id_rol_usuario`) VALUES
-(9, 'brayan', 'bratan@solis', '3005454', '$2b$10$wT7/tyyT6j8rUJ9hfhcSBu4ECyrMLGtQStcKuFP.huyN15DNkZllq', 1),
-(10, 'david', 'david@solis', '3005454', '$2b$10$5GvFcvdH/noVozIBS1i4V.yLKPSmp33kBm1EjEOoXre79/7ohcMEa', 1);
+(33, 'Juan Pérez', 'juan@example.com', '3001234567', 'contraseña_hasheada', 2),
+(37, 'brayan', 'brayan@gmail.com', '3006314254', '$2b$10$mP6XMmAbbhxAvoLj/j5Q4.Kxwe2QI5T3z1WDYVNEClFeNQePc2mXu', 2);
 
 --
 -- Índices para tablas volcadas
@@ -299,6 +314,7 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `email_usuario` (`email_usuario`),
   ADD KEY `id_rol_usuario` (`id_rol_usuario`);
 
 --
@@ -321,7 +337,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
-  MODIFY `id_mesa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
@@ -339,7 +355,7 @@ ALTER TABLE `opiniones`
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -351,7 +367,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Restricciones para tablas volcadas
@@ -413,4 +429,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

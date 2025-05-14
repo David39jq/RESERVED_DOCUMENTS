@@ -17,7 +17,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="styles/Registrarse/signup.css">
+    <link rel="stylesheet" href="styles/registrarse/signup.css">
     <link rel="stylesheet" href="styles/index.css">
 
     <title>Registro</title>
@@ -56,40 +56,42 @@
             <div class="login__area">
                 <form action="/regUsuario" method="POST" class="login__form">
                     <div class="login__content grid">
-                      <div class="login__box">
-                        <input type="text" name="nombre_usuario" required class="login__input">
-                        <label class="login__label">Nombre</label>
-                        <i class="fa-solid fa-user login__icon"></i>
-                      </div>
-                  
-                      <div class="login__box">
-                        <input type="email" name="email_usuario" required class="login__input">
-                        <label class="login__label">Correo Electrónico</label>
-                        <i class="fa-solid fa-envelope login__icon"></i>
-                      </div>
-                  
-                      <div class="login__box">
-                        <input type="text" name="telefono_usuario" required class="login__input">
-                        <label class="login__label">Teléfono</label>
-                        <i class="fa-solid fa-phone login__icon"></i>
-                      </div>
-                  
-                      <div class="login__box">
-                        <input type="password" name="password_usuario" id="campoPass" required class="login__input" pattern=".{8,12}" title="La contraseña debe tener entre 8 y 12 caracteres">
-                        <label for="campoPass" class="login__label" >Contraseña</label>
-                        <i class="ri-eye-off-fill login__icon login__password" id="logincampoPass"></i>
-                      </div>
-                  
-                      <div class="login__box">
-                        <input type="password" name="confirm_password_usuario" id="campoConfirmPass" required class="login__input">
-                        <label for="campoConfirmPass" class="login__label">Confirmar contraseña</label>
-                        <i class="ri-eye-off-fill login__icon login__password" id="logincampoConfirmPass"></i>
-                      </div>
+                        <div class="login__box">
+                            <input type="text" name="nombre_usuario" required placeholder=" " class="login__input" >
+                            <label class="login__label">Nombre</label>
+                            <i class="fa-solid fa-address-card login__icon"></i>
+                        </div>
+
+                        <div class="login__box">
+                            <input type="email" name="email_usuario" required placeholder=" " class="login__input">
+                            <label class="login__label">Correo Electrónico</label>
+                            <i class="fa-solid fa-envelope login__icon"></i>
+                        </div>
+
+                        <div class="login__box">
+                            <input type="text" name="telefono_usuario" required placeholder=" " class="login__input">
+                            <label class="login__label">Teléfono</label>
+                            <i class="fa-solid fa-phone login__icon"></i>
+                        </div>
+
+                        <div class="login__box">
+                            <input type="password" name="password_usuario" id="campoPass" required placeholder=" " class="login__input"
+                                pattern=".{8,12}" title="La contraseña debe tener entre 8 y 12 caracteres">
+                            <label for="campoPass" class="login__label">Contraseña</label>
+                            <i class="ri-eye-off-fill login__icon login__password" id="logincampoPass"></i>
+                        </div>
+
+                        <div class="login__box">
+                            <input type="password" name="confirm_password_usuario" id="campoConfirmPass" required
+                            placeholder=" " class="login__input">
+                            <label for="campoConfirmPass" class="login__label">Confirmar contraseña</label>
+                            <i class="ri-eye-off-fill login__icon login__password" id="logincampoConfirmPass"></i>
+                        </div>
                     </div>
-                  
+
                     <button type="submit" class="login__button">Registrarse</button>
-                  </form>
-                  
+                </form>
+
 
 
                 <div class="login__social">

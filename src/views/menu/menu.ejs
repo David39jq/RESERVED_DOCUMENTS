@@ -39,10 +39,10 @@
                         <div class="items">
 
                             <span class="item active" data-name="all">Todos</span>
-                            <span class="item" data-name="platos">Platos</span>
-                            <span class="item" data-name="bebida">Bebidas</span>
-                            <span class="item" data-name="cocteleria">cocteleria</span>
-                            <span class="item" data-name="postres">postres</span>
+                            <span class="item" data-name="1">Platos</span>
+                            <span class="item" data-name="4">Bebidas</span>
+                            <span class="item" data-name="2">cocteleria</span>
+                            <span class="item" data-name="3">postres</span>
                         </div>
                     </nav>
                     <!-- filter Images -->
@@ -50,17 +50,17 @@
                         <div class="menu">
                             <div class="menu-box">
                                 <% productos.forEach(producto=> { %>
-                                    <div class="image" data-name="<%= producto.categoria %>">
+                                    <div class="image" data-name="<%= producto.id_categoria_menu %>">
                                         <div class="menu-card" data-name="<%= producto.categoria %>">
-                                            <img src="images/<%= producto.imagen %>" alt="">
+                                            <img src="<%= producto.imagen_menu %>" alt="">
                                             <h3 class="menu__name">
-                                                <%= producto.nombre %>
+                                                <%= producto.nombre_plato %>
                                             </h3>
                                             <span class="menu__detail">
                                                 <%= producto.descripcion %>
                                             </span>
                                             <span class="menu__preci">$<%= producto.precio.toLocaleString('es-CO') %>
-                                                    </span>
+                                            </span>
                                         </div>
                                     </div>
                                     <% }) %>
@@ -77,7 +77,7 @@
 
         <script src="js/menu.js"></script>
         <!-- Script -->
-        <script src="../../js/index.js"></script>
+        <script src="js/index.js"></script>
 </body>
 
 </html>

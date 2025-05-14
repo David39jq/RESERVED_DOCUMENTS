@@ -14,3 +14,6 @@ INSERT INTO `categorias_menu` (`id_categoria`, `nombre_categoria`) VALUES
 (7, 'Comida Internacional'),
 (8, 'Desayunos');
 
+CREATE DATABASE IF NOT EXISTS restaurante_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+USE restaurante_db;
