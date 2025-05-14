@@ -209,7 +209,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id_rol`, `nombre_rol`) VALUES
 (1, 'administrador'),
-(2, 'usuario');
+(2, 'usuario'),
+(3, 'empleado');
 
 -- --------------------------------------------------------
 
